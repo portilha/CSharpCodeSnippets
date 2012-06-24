@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>CustomTypeDescripter</Title>
+      <Author>Efacec</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp"><![CDATA[	#region ICustomTypeDescriptor Members
+
+		public object GetPropertyOwner(PropertyDescriptor pd)
+		{
+			return this;
+		}
+
+		public AttributeCollection GetAttributes()
+		{
+			return TypeDescriptor.GetAttributes(this, true);
+		}
+
+		public string GetClassName()
+		{
+			return TypeDescriptor.GetClassName(this, true);
+		}
+
+		public string GetComponentName()
+		{
+			return TypeDescriptor.GetComponentName(this, true);
+		}
+
+		public TypeConverter GetConverter()
+		{
+			return TypeDescriptor.GetConverter(this, true);
+		}
+
+		public EventDescriptor GetDefaultEvent()
+		{
+			return TypeDescriptor.GetDefaultEvent(this, true);
+		}
+
+		public PropertyDescriptor GetDefaultProperty()
+		{
+			return TypeDescriptor.GetDefaultProperty(this, true);
+		}
+
+		public object GetEditor(Type editorBaseType)
+		{
+			return TypeDescriptor.GetEditor(this, editorBaseType, true);
+		}
+
+		public EventDescriptorCollection GetEvents(Attribute[] attributes)
+		{
+			return TypeDescriptor.GetEvents(this, attributes, true);
+		}
+
+		public EventDescriptorCollection GetEvents()
+		{
+			return TypeDescriptor.GetEvents(this, true);
+		}
+
+		public PropertyDescriptorCollection GetProperties(Attribute[] attributes)
+		{
+			PropertyDescriptorCollection thisProps = TypeDescriptor.GetProperties(this, attributes, true);
+
+			if (KeywordDefinition.Scope == Scope.Instance)
+				return thisProps;
+
+			return GetNodePropertiesDescriptors(thisProps);
+		}
+
+		public PropertyDescriptorCollection GetProperties()
+		{
+			PropertyDescriptorCollection thisProps = TypeDescriptor.GetProperties(this, true);
+
+			if (KeywordDefinition.Scope == Scope.Instance)
+				return thisProps;
+
+			return GetNodePropertiesDescriptors(thisProps);
+		}
+
+		private PropertyDescriptorCollection GetNodePropertiesDescriptors(PropertyDescriptorCollection thisProps)
+		{
+			PropertyDescriptor[] newPropsDescrs = new PropertyDescriptor[thisProps.Count];
+			int i = 0;
+
+			foreach (PropertyDescriptor propDescr in thisProps)
+			{
+				if (propDescr.Name == "Key")
+					newPropsDescrs[i] = new ValueReadOnlyPropertyDescriptor(propDescr);
+				else
+					newPropsDescrs[i] = propDescr;
+
+				i++;
+			}
+
+			return new PropertyDescriptorCollection(newPropsDescrs);
+		}
+
+		#endregion]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

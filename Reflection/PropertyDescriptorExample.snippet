@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>propd</Title>
+      <Author>Efacec</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="false">
+          <ID>Name</ID>
+          <ToolTip>Prefix of the Name of the PropertyDescriptor</ToolTip>
+          <Default>Name</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>attribs</ID>
+          <ToolTip>Attributes that the property should have</ToolTip>
+          <Default>
+          </Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>isReadOnly</ID>
+          <ToolTip>If the property is read only</ToolTip>
+          <Default>_basePropDescr.IsReadOnly</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[class $Name$PropertyDescriptor : PropertyDescriptor
+		{
+			PropertyDescriptor _basePropDescr;
+
+			#region Constructors
+
+			public $Name$PropertyDescriptor(PropertyDescriptor basePropDescr)
+				: base(basePropDescr as MemberDescriptor, new Attribute[]{$attribs$})
+			{
+				_basePropDescr = basePropDescr;
+			}
+			#endregion
+
+			public override bool CanResetValue(object component)
+			{
+				return _basePropDescr.CanResetValue(component);
+			}
+
+			public override Type ComponentType
+			{
+				get { return _basePropDescr.ComponentType; }
+			}
+
+			public override object GetValue(object component)
+			{
+				return _basePropDescr.GetValue(component);
+			}
+
+			public override bool IsReadOnly
+			{
+				get { return $isReadOnly$; }
+			}
+
+			public override Type PropertyType
+			{
+				get { return _basePropDescr.PropertyType; }
+			}
+
+			public override void ResetValue(object component)
+			{
+				_basePropDescr.ResetValue(component);
+			}
+
+			public override void SetValue(object component, object value)
+			{
+				_basePropDescr.SetValue(component, value);
+			}
+
+			public override bool ShouldSerializeValue(object component)
+			{
+				return _basePropDescr.ShouldSerializeValue(component);
+			}
+		}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
