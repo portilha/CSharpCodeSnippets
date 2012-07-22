@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>ReadXml</Title>
+      <Author>Pedro</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>xmlread</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>filePathOrStream</ID>
+          <ToolTip>filePathOrStream</ToolTip>
+          <Default>filePathOrStream</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[XDocument doc = XDocument.Load($filePathOrStream$);
+$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

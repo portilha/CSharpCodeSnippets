@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Xml Foreach</Title>
+      <Author>Pedro</Author>
+      <Description>Navigates in the xml tree in search of a set of nodes, it navigates all the three</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>xmlfor</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>doc</ID>
+          <ToolTip>XContainer</ToolTip>
+          <Default>doc</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>elementName</ID>
+          <ToolTip>elementName</ToolTip>
+          <Default>elementName</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>item</ID>
+          <ToolTip>Name of the item</ToolTip>
+          <Default>item</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[            foreach (var $item$ in $doc$.Descendants(XName.Get($elementName$, $doc$.Root.GetDefaultNamespace().ToString())))
+            {
+                if ($item$.HasElements) // Check if the node has children nodes.
+                {
+                    
+                }
+
+                if ($item$.HasAttributes) // Check if the node has attributes
+                {
+                   
+                }
+
+                if (!string.IsNullOrWhiteSpace($item$.Value)) // Check if the node has content
+                {
+
+                }
+            }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
