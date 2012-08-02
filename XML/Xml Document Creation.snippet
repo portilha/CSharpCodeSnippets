@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Xml Document Creation</Title>
+      <Author>Pedro</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>comment</ID>
+          <ToolTip>comment</ToolTip>
+          <Default>comment</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>rootElementName</ID>
+          <ToolTip>rootElementName</ToolTip>
+          <Default>rootElementName</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>fistChild</ID>
+          <ToolTip>fistChild</ToolTip>
+          <Default>fistChild</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>firstChildAttribute</ID>
+          <ToolTip>firstChildAttribute</ToolTip>
+          <Default>firstChildAttribute</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>1</ID>
+          <ToolTip>1</ToolTip>
+          <Default>1</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>value</ID>
+          <ToolTip>value</ToolTip>
+          <Default>value</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[     XDocument doc = new XDocument(
+                    new XDeclaration("$1$.0", "utf-8", "yes"),
+                    new XComment("$comment$"),
+                    new XElement("$rootElementName$",
+                          new XElement("$fistChild$",
+                          new XAttribute("$firstChildAttribute$", $1$),
+                          new XAttribute("$firstChildAttribute$", "$value$"),
+                             new XElement("firstChildChild", "Gustavo Achong"),
+                             new XElement("firstChildChild", "7/31/1996"))
+              ));]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

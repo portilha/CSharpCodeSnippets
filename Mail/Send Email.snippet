@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Send Email</Title>
+      <Author>Pedro</Author>
+      <Description>Send an email using an smtp server</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>sendmail</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>from</ID>
+          <ToolTip>from</ToolTip>
+          <Default>from</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>to</ID>
+          <ToolTip>to</ToolTip>
+          <Default>to</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>subject</ID>
+          <ToolTip>subject</ToolTip>
+          <Default>subject</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>message</ID>
+          <ToolTip>message</ToolTip>
+          <Default>message</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>accountName</ID>
+          <ToolTip>accountName</ToolTip>
+          <Default>accountName</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>accountPassword</ID>
+          <ToolTip>accountPassword</ToolTip>
+          <Default>accountPassword</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>serverName</ID>
+          <ToolTip>serverName</ToolTip>
+          <Default>serverName</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[         MailMessage mail = new MailMessage();
+         mail.To.Add("$to$");
+         mail.From = new MailAddress("$from$");
+         mail.Subject = "$subject$";
+         mail.Body = "$message$";
+
+         SmtpClient smtp = new SmtpClient();
+         smtp.Host = "smtp.$serverName$.com";
+         smtp.Credentials = new System.Net.NetworkCredential("$accountName$", "$accountPassword$");
+         smtp.EnableSsl = true;
+         smtp.Send(mail);]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
