@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Keywords>
+        <Keyword>
+        </Keyword>
+      </Keywords>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>DebugListeners</Title>
+      <Author>Portilha</Author>
+      <Description>Add a listener to monitor the debug output</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>debugadd</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>debugFile</ID>
+          <ToolTip>debugFile</ToolTip>
+          <Default>debugFile</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[Debug.Listeners.Add(new TextWriterTraceListener($debugFile$));]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
