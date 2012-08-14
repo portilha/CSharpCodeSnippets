@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Profile code by using a StopWatch</Title>
+      <Author>Efacec</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>methodProfile</ID>
+          <ToolTip>Put here the code that you want to check the time</ToolTip>
+          <Default>;</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[Stopwatch watch = new Stopwatch();
+watch.Start();
+
+$methodProfile$            
+			
+watch.Stop();
+Console.WriteLine("Serial Time: " + watch.Elapsed.Seconds.ToString());]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
