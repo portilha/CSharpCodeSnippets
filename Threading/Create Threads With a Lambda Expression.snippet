@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Create Threads With a Lambda Expression</Title>
+      <Author>Efacec</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>code</ID>
+          <ToolTip>code</ToolTip>
+          <Default>;</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>threadName</ID>
+          <ToolTip>threadName</ToolTip>
+          <Default>threadName</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>threadPriority</ID>
+          <ToolTip>threadPriority</ToolTip>
+          <Default>BelowNormal</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[Thread $threadName$ = new Thread(() =>
+				{
+					$code$
+				});
+
+			$threadName$.Priority = ThreadPriority.$threadPriority$;
+			$threadName$.Start();]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
