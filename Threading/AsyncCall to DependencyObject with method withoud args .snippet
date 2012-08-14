@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>AsyncCall Method Without Arguments</Title>
+      <Author>Efacec</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>dependencyObject</ID>
+          <ToolTip>dependencyObject</ToolTip>
+          <Default>dependencyObject</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>dispatcherPriority</ID>
+          <ToolTip>Ctrl + Space to choose a different priority then Background</ToolTip>
+          <Default>Background</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>method</ID>
+          <ToolTip>method</ToolTip>
+          <Default>method</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[$dependencyObject$.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.$dispatcherPriority$,
+			 new System.Action($method$));
+$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
