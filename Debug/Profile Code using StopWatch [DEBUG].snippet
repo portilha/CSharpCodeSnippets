@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>Profile Code Block in Debug</Title>
+      <Author>EFACEC</Author>
+      <Description>It wraps a block of code to check the time its takes.</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>timedeb</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp"><![CDATA[#if DEBUG
+System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
+watch.Start();
+#endif
+
+$selected$
+
+#if DEBUG
+watch.Stop();
+Console.WriteLine("Serial Time: " + watch.Elapsed.Seconds.ToString());
+#endif]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
