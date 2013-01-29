@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>GetVersionControlServer</Title>
+      <Author>PP</Author>
+      <Description>Get the version control server for accessing the source control.</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>tfssrc</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>tfsClient</ID>
+          <ToolTip>TeamFoundationServer</ToolTip>
+          <Default>tfs</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[VersionControlServer sourceControlService = $tfsClient$.GetService<VersionControlServer>();]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

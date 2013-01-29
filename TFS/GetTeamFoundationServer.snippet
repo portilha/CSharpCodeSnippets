@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>Get Team Foundation Server Client</Title>
+      <Author>PP</Author>
+      <Description>Get the Team Foundation Server Client</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>tfsclient</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>Server</ID>
+          <ToolTip>Server</ToolTip>
+          <Default>Server</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>Port</ID>
+          <ToolTip>Port</ToolTip>
+          <Default>tfs</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Object Editable="true">
+          <ID>VDir</ID>
+          <ToolTip>VDir</ToolTip>
+          <Default>8080</Default>
+          <Function>
+          </Function>
+          <Type>System.Int32</Type>
+        </Object>
+      </Declarations>
+      <Code Language="csharp" Kind="method body"><![CDATA[// Connect to Team Foundation Server
+//     Server is the name of the server that is running the application tier for Team Foundation.
+//     Port is the port that Team Foundation uses. The default port is 8080.
+//     VDir is the virtual path to the Team Foundation application. The default path is tfs.
+TfsTeamProjectCollection tfs = TfsTeamProjectCollectionFactory.GetTeamProjectCollection(new Uri("http://$Server$:$Port$/$VDir$"));]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Get Team Project or Collection From UI</Title>
+      <Author>PP</Author>
+      <Description>Get Tfs Project or Collection from UI</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>tfsclientbrowse</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp"><![CDATA[using (TeamProjectPicker p = new TeamProjectPicker(TeamProjectPickerMode.SingleProject, true))
+{
+    switch (p.ShowDialog())
+    {
+        case System.Windows.Forms.DialogResult.OK:
+        case System.Windows.Forms.DialogResult.Yes:
+            {
+                return p.SelectedProjects[0];
+            }
+        default: // No or Cancel Answer
+
+            return null;
+    }
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
