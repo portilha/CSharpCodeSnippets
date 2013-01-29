@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Keywords>
+        <Keyword>Xml</Keyword>
+      </Keywords>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Xml Serialization</Title>
+      <Author>Pedro Portilha</Author>
+      <Description>Serialize any object to XML</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>xmlserialize</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ObjectType</ID>
+          <ToolTip>ObjectType</ToolTip>
+          <Default>ObjectType</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>filePath</ID>
+          <ToolTip>filePath</ToolTip>
+          <Default>filePath</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>objectName</ID>
+          <ToolTip>objectName</ToolTip>
+          <Default>objectName</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[$ObjectType$ $objectName$;
+
+System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer($objectName$.GetType());
+using (XmlWriter xmlWriter = XmlWriter.Create($filePath$))
+{
+    x.Serialize(xmlWriter, $objectName$);
+}
+
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

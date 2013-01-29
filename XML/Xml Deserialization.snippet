@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Keywords>
+        <Keyword>Xml</Keyword>
+        <Keyword>Deserialize</Keyword>
+      </Keywords>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Xml Deserialization</Title>
+      <Author>Pedro Portilha</Author>
+      <Description>Deserialize an Xml to any object type</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>xmldeserialize</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>ObjectType</ID>
+          <ToolTip>ObjectType</ToolTip>
+          <Default>ObjectType</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>filePathOrOtherStream</ID>
+          <ToolTip>filePathOrOtherStream</ToolTip>
+          <Default>filePathOrOtherStream</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>ObjectName</ID>
+          <ToolTip>ObjectName</ToolTip>
+          <Default>ObjectName</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[System.Xml.Serialization.XmlSerializer x = new System.Xml.Serialization.XmlSerializer(typeof($ObjectType$));
+using (XmlReader xmlWriter = XmlReader.Create($filePathOrOtherStream$))
+{
+    $ObjectType$ $ObjectName$ = ($ObjectType$)x.Deserialize(xmlWriter);
+}           ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
