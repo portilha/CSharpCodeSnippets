@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Cancellable Task</Title>
+      <Author>PP</Author>
+      <Description>Cancellable Task</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>ctask</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>cancelCallback</ID>
+          <ToolTip>cancelCallback</ToolTip>
+          <Default>cancelCallback</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>action</ID>
+          <ToolTip>action</ToolTip>
+          <Default>action</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[var cTokenSource = new CancellationTokenSource();
+// Create a cancellation token from CancellationTokenSource
+var cToken = cTokenSource.Token;
+// Create a task and pass the cancellation token
+var t1 = Task<int>.Factory.StartNew(() => $action$(cToken), cToken);
+
+// to register a delegate for a callback when a
+// cancellation request is made
+cToken.Register($cancelCallback$);
+
+// request cancellation.
+cTokenSource.Cancel();
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

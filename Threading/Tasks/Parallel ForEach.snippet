@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Keywords>
+        <Keyword>Parallel</Keyword>
+        <Keyword>foreach</Keyword>
+      </Keywords>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Parallel ForEach</Title>
+      <Author>PP</Author>
+      <Description>Parallel Foreach, Order should not matter</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>pforeach</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>enumerable</ID>
+          <ToolTip>enumerable</ToolTip>
+          <Default>enumerable</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>action</ID>
+          <ToolTip>action</ToolTip>
+          <Default>action</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[Parallel.ForEach($enumerable$, $action$);]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
