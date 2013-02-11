@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Create XElement With Namespaces</Title>
+      <Author>PP</Author>
+      <Description>Creates a sample xelement with namespaces and prefixs</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>xmlcreate</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp"><![CDATA[            XNamespace ci = "http://somewhere.com";
+            XNamespace ca = "http://somewhereelse.com";
+
+            XElement element = new XElement("root",
+                new XAttribute(XNamespace.Xmlns + "ci", ci),
+                new XAttribute(XNamespace.Xmlns + "ca", ca),
+                new XAttribute(XNamespace.Xml + "space", "preserve"),
+                    new XElement(ci + "field1", "test"),
+                    new XElement(ca + "field2", "another test"));]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
