@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Replace String with Delegate</Title>
+      <Author>PP</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>regexrep</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>inputString</ID>
+          <ToolTip>inputString</ToolTip>
+          <Default>inputString</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>patternMatch</ID>
+          <ToolTip>patternMatch</ToolTip>
+          <Default>patternMatch</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>strDelegate</ID>
+          <ToolTip>strDelegate</ToolTip>
+          <Default>strDelegate</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>result</ID>
+          <ToolTip>result</ToolTip>
+          <Default>result</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[var $result$ = Regex.Replace($inputString$, $patternMatch$, match => $strDelegate$);]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
