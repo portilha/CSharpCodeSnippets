@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Keywords>
+        <Keyword>binding</Keyword>
+      </Keywords>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>SetBinding</Title>
+      <Author>Pedro Portilha</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>setbinding</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>name</ID>
+          <ToolTip>name</ToolTip>
+          <Default>name</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>SourcePropertyName</ID>
+          <ToolTip>SourcePropertyName</ToolTip>
+          <Default>SourcePropertyName</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>ObjectThatContainSourcePropertyName</ID>
+          <ToolTip>ObjectThatContainSourcePropertyName</ToolTip>
+          <Default>ObjectThatContainSourcePropertyName</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>TargetProperty</ID>
+          <ToolTip>TargetProperty</ToolTip>
+          <Default>TargetProperty</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[             var $name$Binding = new Binding("$SourcePropertyName$")
+                                {
+                                    Source = $ObjectThatContainSourcePropertyName$, 
+                                    Mode = BindingMode.OneWay
+                                };
+            this.SetBinding($TargetProperty$, $name$Binding);]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

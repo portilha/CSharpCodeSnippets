@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>StopAnimation</Title>
+      <Author>EFACEC</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>DependencyPropertyOwner</ID>
+          <ToolTip>The DependencyProperty Owner of the object we want to stop the animation</ToolTip>
+          <Default>Brush</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>DependencyProperty</ID>
+          <ToolTip>DPDefinitionName</ToolTip>
+          <Default>OpacityProperty</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>object</ID>
+          <ToolTip>object</ToolTip>
+          <Default>pen</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[this.$object$.$DependencyPropertyOwner$.BeginAnimation($DependencyPropertyOwner$.$DependencyProperty$, null);]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
