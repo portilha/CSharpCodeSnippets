@@ -13,16 +13,35 @@
       <Shortcut>timedeb</Shortcut>
     </Header>
     <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>watch</ID>
+          <ToolTip>watch</ToolTip>
+          <Default>watch</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>name</ID>
+          <ToolTip>name</ToolTip>
+          <Default>name</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
       <Code Language="csharp"><![CDATA[#if DEBUG
-System.Diagnostics.Stopwatch watch = new System.Diagnostics.Stopwatch();
-watch.Start();
+System.Diagnostics.Stopwatch $watch$ = new System.Diagnostics.Stopwatch();
+$watch$.Start();
+try {
 #endif
 
 $selected$
 
 #if DEBUG
-watch.Stop();
-Console.WriteLine("Serial Time: " + watch.Elapsed.Seconds.ToString());
+} finally { 
+$watch$.Stop();
+Console.WriteLine("$name$ Time-ms: " + $watch$.Elapsed.TotalMilliseconds.ToString());
+}
 #endif]]></Code>
     </Snippet>
   </CodeSnippet>
