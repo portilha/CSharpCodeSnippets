@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Keywords>
+        <Keyword>html</Keyword>
+        <Keyword>user input</Keyword>
+      </Keywords>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>HTML Sanitization</Title>
+      <Author>Portilha</Author>
+      <Description>Sanitize the user HTML input</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>htmlenc</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>returnName</ID>
+          <ToolTip>returnName</ToolTip>
+          <Default>returnName</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>userInput</ID>
+          <ToolTip>userInput</ToolTip>
+          <Default>userInput</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[string $returnName$ = System.Web.HttpUtility.HtmlEncode($userInput$);$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

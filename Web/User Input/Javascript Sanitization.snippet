@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>SurroundsWith</SnippetType>
+      </SnippetTypes>
+      <Title>Javascript Sanitization</Title>
+      <Author>Portilha</Author>
+      <Description>Javascript Sanitization </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>userInput</ID>
+          <ToolTip>Value to be encoded to javascript</ToolTip>
+          <Default>userInput</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$" Kind="method body"><![CDATA[Ajax.JavaScriptStringEncode($userInput$) $end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

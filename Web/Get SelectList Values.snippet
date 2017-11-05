@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Get SelectList Values</Title>
+      <Author>Portilha</Author>
+      <Description>Loads a list of objects to present them in a DropDown or Select</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>mvcselect</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>HtmlId</ID>
+          <ToolTip>Id of the HTML element</ToolTip>
+          <Default>HtmlId</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>list</ID>
+          <ToolTip>List of objects</ToolTip>
+          <Default>list</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>PropertyName</ID>
+          <ToolTip>Property to display of the objects</ToolTip>
+          <Default>PropertyName</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>selectedValue</ID>
+          <ToolTip>The value selected by default</ToolTip>
+          <Default>selectedValue</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[ViewBag.$HtmlId$ = new SelectList($list$, "$HtmlId$", "$PropertyName$", $selectedValue$);]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
