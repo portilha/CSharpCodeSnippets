@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Command With Parameters</Title>
+      <Author>[USERNAME]</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>sqlqueryparams</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>accessDbConnection</ID>
+          <ToolTip>accessDbConnection</ToolTip>
+          <Default>accessDbConnection</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>transaction</ID>
+          <ToolTip>transaction</ToolTip>
+          <Default>
+          </Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>cmd</ID>
+          <ToolTip>cmd</ToolTip>
+          <Default>cmd</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>ParameterValue</ID>
+          <ToolTip>ParameterValue</ToolTip>
+          <Default>ParameterValue</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[using (DbCommand $cmd$ = new OleDbCommand(
+    @"INSERT INTO Person (FirstName, LastName) VALUES (@FirstName, @LastName)", 
+    $accessDbConnection$, $transaction$))
+{
+    $cmd$.Parameters.Add(new OleDbParameter("@FirstName", $ParameterValue$));
+    $cmd$.Parameters.Add(new OleDbParameter("@LastName", "InputSmithValue"));
+
+    $cmd$.ExecuteNonQuery();
+
+    $end$
+}
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

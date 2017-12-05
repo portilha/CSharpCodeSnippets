@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Read SQL Query</Title>
+      <Author>[USERNAME]</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>sqlread</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>sqlQuery</ID>
+          <ToolTip>sqlQuery</ToolTip>
+          <Default>sqlQuery</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>dbConnection</ID>
+          <ToolTip>dbConnection</ToolTip>
+          <Default>dbConnection</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>command</ID>
+          <ToolTip>command</ToolTip>
+          <Default>command</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[var $sqlQuery$ = "SELECT * FROM ";
+
+using(DbCommand $command$ = new SQLiteCommand($sqlQuery$, $dbConnection$))
+{
+    DbDataReader reader = $command$.ExecuteReader();
+ 
+    if(reader.HasRows)
+    {
+       while (reader.Read())
+        {
+            Console.WriteLine(
+                "Name: " + reader["name"] 
+           + "\tScore: " + reader["score"]
+           );
+        }
+    }
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -28,7 +28,9 @@
           </Function>
         </Literal>
       </Declarations>
-      <Code Language="csharp"><![CDATA[            string connetionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=$dbPath$;";
+      <Code Language="csharp"><![CDATA[            
+	  // Check the connection string at https://www.connectionstrings.com/
+	  string connetionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=$dbPath$;";
             using (OleDbConnection $connectionName$ = new OleDbConnection(connetionString))
             {
                 $connectionName$.Open();
