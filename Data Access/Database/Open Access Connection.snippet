@@ -28,10 +28,10 @@
           </Function>
         </Literal>
       </Declarations>
-      <Code Language="csharp"><![CDATA[            
+      <Code Language="csharp" Delimiter="$"><![CDATA[            
 	  // Check the connection string at https://www.connectionstrings.com/
 	  string connetionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=$dbPath$;";
-            using (OleDbConnection $connectionName$ = new OleDbConnection(connetionString))
+            using (DbConnection $connectionName$ = new OleDbConnection(connetionString))
             {
                 $connectionName$.Open();
 

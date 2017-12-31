@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Semaphore</Title>
+      <Author>Portilha</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>semaphore</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>semaphore</ID>
+          <ToolTip>semaphore</ToolTip>
+          <Default>semaphore</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[           int capacity = 3;
+
+            SemaphoreSlim $semaphore$ = new SemaphoreSlim(capacity);
+
+            $semaphore$.Wait(); // Ask for a place
+
+            // Critical area
+
+            $semaphore$.Release(); // Leave the shared area]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

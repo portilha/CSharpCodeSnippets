@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Create ReadWriteLock</Title>
+      <Author>Portilha</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>readwritelock</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>rw</ID>
+          <ToolTip>rw</ToolTip>
+          <Default>rw</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[// Read Lock → Upgradeable Lock → Write Lock
+
+ReaderWriterLockSlim $rw$ = new ReaderWriterLockSlim();
+
+$rw$.EnterReadLock();
+
+// Read the object
+
+$rw$.ExitReadLock();
+
+
+$rw$.EnterWriteLock();
+
+// Update the object
+
+$rw$.ExitWriteLock();
+
+
+bool isToUpgrade = true;
+
+$rw$.EnterUpgradeableReadLock();
+
+if (isToUpgrade)
+{
+    $rw$.EnterWriteLock();
+
+    $rw$.ExitWriteLock();
+ }
+
+$rw$.ExitUpgradeableReadLock();]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

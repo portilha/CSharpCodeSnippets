@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Create Generic Type</Title>
+      <Author>Portilha</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>
+      </Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>genericType</ID>
+          <ToolTip>genericType</ToolTip>
+          <Default>genericType</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>GenericClass</ID>
+          <ToolTip>GenericClass</ToolTip>
+          <Default>GenericClass</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>type</ID>
+          <ToolTip>type</ToolTip>
+          <Default>type</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[Type $genericType$ = typeof($GenericClass$<>).MakeGenericType(typeof($type$), instance.GetType());]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

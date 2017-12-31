@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Publish Message</Title>
+      <Author>Portilha</Author>
+      <Description>Creates a connection and publish a message</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>publishMsg</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>hostname</ID>
+          <ToolTip>hostname</ToolTip>
+          <Default>hostname</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>queueName</ID>
+          <ToolTip>queueName</ToolTip>
+          <Default>queueName</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>routingKey</ID>
+          <ToolTip>routingKey</ToolTip>
+          <Default>routingKey</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[var factory = new ConnectionFactory() {
+    HostName = "$hostname$",
+    
+};
+
+using (var connection = factory.CreateConnection())
+{
+    using (var channel = connection.CreateModel())
+    {
+        channel.QueueDeclare(queue: "$queueName$",
+                     durable: false,
+                     exclusive: false,
+                     autoDelete: false,
+                     arguments: null);
+
+        // Configures the subscribers not to receive more than 1 message at a given time
+        channel.BasicQos(prefetchSize: 0, prefetchCount: 1, global: false);
+
+		// Serialize the Message
+        string message = "Hello World!";
+        var body = Encoding.UTF8.GetBytes(message);
+
+		// Configure the properties of the channel
+        var properties = channel.CreateBasicProperties();
+        properties.Persistent = true;
+
+        channel.BasicPublish(exchange: "",
+                             routingKey: "$routingKey$",
+                             basicProperties: null,
+                             body: body);
+
+        Trace.WriteLine(" [x] Sent {0}", message);
+    }
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

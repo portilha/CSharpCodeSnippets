@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Convert String To ByteArray</Title>
+      <Author>Portilha</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>convertstob</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>userData</ID>
+          <ToolTip>userData</ToolTip>
+          <Default>userData</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>string</ID>
+          <ToolTip>string</ToolTip>
+          <Default>string</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[byte[] $userData$ = System.Text.Encoding.UTF8.GetBytes($string$);]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

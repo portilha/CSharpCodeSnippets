@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Create Http Cookie</Title>
+      <Author>Portilha</Author>
+      <Description>Create cookie for client storage</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>createcookie</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>httpCookie</ID>
+          <ToolTip>httpCookie</ToolTip>
+          <Default>httpCookie</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[System.Web.HttpCookie $httpCookie$ = new HttpCookie("role", "")
+{
+    HttpOnly = true,
+    Path = "/routeToIncludeCookie",
+    Secure = true,
+    Shareable = false
+};
+this.HttpContext.Response.Cookies.Add($httpCookie$);]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

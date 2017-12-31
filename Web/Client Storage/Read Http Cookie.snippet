@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Read Http Cookie</Title>
+      <Author>Portilha</Author>
+      <Description>Reads Cookie from Response</Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>readcookie</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>cookieName</ID>
+          <ToolTip>cookieName</ToolTip>
+          <Default>cookieName</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[   var $cookieName$ = this.HttpContext.Request.Cookies.Get("$cookieName$");]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
