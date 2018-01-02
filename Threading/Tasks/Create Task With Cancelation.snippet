@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Create Task With Cancelation</Title>
+      <Author>Portilha</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>taskwithcanc</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>System.Threading.Tasks</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>cancelationName</ID>
+          <ToolTip>cancelationName</ToolTip>
+          <Default>cancelationName</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>timeout</ID>
+          <ToolTip>Time out</ToolTip>
+          <Default>1</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[try
+{
+    CancellationTokenSource $cancelationName$ = new CancellationTokenSource(TimeSpan.FromSeconds($timeout$));
+    await Task.Delay(TimeSpan.FromSeconds(2), $cancelationName$.Token);
+}
+catch (TaskCanceledException)
+{
+    throw;
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

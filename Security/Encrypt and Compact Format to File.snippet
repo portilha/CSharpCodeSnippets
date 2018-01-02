@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Encrypt and Compact Format to File</Title>
+      <Author>Portilha</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>encrypt</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>objectToWrite</ID>
+          <ToolTip>objectToWrite</ToolTip>
+          <Default>objectToWrite</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[using (FileStream fs = File.Create("MyFile"))
+using (RijndaelManaged rm = new RijndaelManaged()) // The Key and IV used here should be used on the decrypt
+using (CryptoStream cryptoStream = new CryptoStream(fs, rm.CreateEncryptor(), CryptoStreamMode.Write))
+using (GZipStream gs = new GZipStream(cryptoStream, CompressionMode.Compress))
+using (StreamWriter file = new StreamWriter(gs))
+using (JsonTextWriter writer = new JsonTextWriter(file))
+{
+    $objectToWrite$.WriteTo(writer);
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

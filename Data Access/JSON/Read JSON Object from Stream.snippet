@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Read JSON Object from Stream</Title>
+      <Author>Portilha</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>readjsonstream</Shortcut>
+    </Header>
+    <Snippet>
+      <Imports>
+        <Import>
+          <Namespace>Newtonsoft.Json</Namespace>
+        </Import>
+        <Import>
+          <Namespace>Newtonsoft.Json.Linq</Namespace>
+        </Import>
+        <Import>
+          <Namespace>System.IO</Namespace>
+        </Import>
+      </Imports>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>objectName</ID>
+          <ToolTip>objectName</ToolTip>
+          <Default>objectName</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[// https://www.newtonsoft.com/json/help/html/ReadJson.htm
+// read JSON directly from a file or other stream
+using (StreamReader file = File.OpenText(@"c:\videogames.json"))
+using (JsonTextReader reader = new JsonTextReader(file))
+{
+    JObject $objectName$ = (JObject)JToken.ReadFrom(reader);
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
