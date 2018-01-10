@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Run Several Tasks</Title>
+      <Author>[USERNAME]</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>taskrunseveral</Shortcut>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>tasks</ID>
+          <ToolTip>tasks</ToolTip>
+          <Default>tasks</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>task1</ID>
+          <ToolTip>task1</ToolTip>
+          <Default>task1</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>task2</ID>
+          <ToolTip>task2</ToolTip>
+          <Default>task2</Default>
+          <Function>
+          </Function>
+        </Literal>
+        <Literal Editable="true">
+          <ID>task3</ID>
+          <ToolTip>task3</ToolTip>
+          <Default>task3</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp" Delimiter="$"><![CDATA[var $tasks$ = Task.Run(() => $task1$).ContinueWith((t) => $task2$);
+
+var $task3$ = Task.Delay(3);
+
+await Task.WhenAll($tasks$, $task3$);]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
